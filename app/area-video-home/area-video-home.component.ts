@@ -3,6 +3,8 @@ import { SearchServiceService } from '../shared/search-service.service';
 
 import { Router }          from '@angular/router';
 
+mammt
+
 @Component({
   selector: 'app-area-video-home',
   templateUrl: './area-video-home.component.html',
