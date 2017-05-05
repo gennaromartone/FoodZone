@@ -1,0 +1,86 @@
+<!--
+<ul >
+  <li *ngFor="let user of users">
+ 
+    <span class="badge">{{user.nome}}</span>
+    <span>{{user.cognome}}</span>-->
+   <!-- <button class="delete"
+      (click)="delete(hero); $event.stopPropagation()">x</button> 
+  </li>
+</ul> -->
+<header class="divider-background background-parallax">
+	
+		<div class="overlay background-dark-grey"></div>
+	
+		<img alt="Header Background" class="background-image" src="img/hero15.jpg" />
+		
+		<div class="row">
+			<div class="medium-12 medium-centered columns text-center">
+				<h2 class="text-white">Ti diamo il Benvenuto su Food Zone</h2>
+        <p class="lead text-white">
+            Dietro ogni rivenditore ci sono delle persone reali, ecco perchè dovrai confermare delle informazioni per attivare il tuo profilo.
+
+          </p>
+			</div>
+		</div>
+    
+	</header>
+	
+	<section><!--begin large features-->
+	
+		<div class="row">
+		
+			<div class="medium-4 columns text-center">
+				<div class="icon-box">
+					<i class="icon icon-camera"></i>
+				</div>
+				<h6>Aggiungi la tua foto del profilo</h6>
+				<div class="horizontal-line"></div>
+				<p>
+				Dai una faccia al tuo nome. La aggiungeremo al tuo profilo e la condivideremo con i futuri acquirenti.
+				</p>
+        <a href="#more" class="button button-small button-reg-facebook button-filled">Usa la foto di Facebook</a>
+          <a href="#more" data-reveal-id="myModalNext" dismissmodalclass="close-reveal-modal2" 
+            class="button button-small button-reg-email button-filled">Carica una foto</a>
+			</div>
+			
+			<div class="medium-4 columns text-center">
+				<div class="icon-box">
+					<i class="icon icon-phone"></i>
+				</div>
+				<h6>Conferma il tuo numero</h6>
+				<div class="horizontal-line"></div>
+				<p>
+					In questo modo i tuoi clienti potranno contattarti dopo un acquisto.
+				</p>
+        <input type="email"  placeholder="+39" [(ngModel)]="user.email" name="email" 
+         value="" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" >
+        <small [hidden]="email.valid || (email.pristine && !f.submitted)">
+          Email is required and format should be <i>john@doe.com</i>.
+        </small>
+        <a href="#more" data-reveal-id="myModalNext" dismissmodalclass="close-reveal-modal2" 
+            class="button button-small button-reg-email button-filled">Conferma il Numero di Telefono</a>
+			</div>
+			
+			<div class="medium-4 columns text-center">
+				<div class="icon-box">
+					<i class="icon icon-browser"></i>
+				</div>
+				<h6>Conferma la tua mail</h6>
+				<div class="horizontal-line"></div>
+				<p>
+					Cerca nella tua posta e tocca il link che ti abbiamo inviato, confermerai la tua mail.
+				</p>
+        <input type="email"  placeholder="Indirizzo email" [(ngModel)]="user.email" name="email" 
+         value="" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" >
+        <small [hidden]="email.valid || (email.pristine && !f.submitted)">
+          Email is required and format should be <i>john@doe.com</i>.
+        </small>
+        <a href="#more" data-reveal-id="myModalNext" dismissmodalclass="close-reveal-modal2" 
+            class="button button-small button-reg-email button-filled">Invia l'email di nuovo</a>
+			</div>
+			
+				
+		</div>
+	
+	</section><!--end large features-->
