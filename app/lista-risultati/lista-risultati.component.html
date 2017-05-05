@@ -1,0 +1,89 @@
+<section>
+  <div id="map-canvas"></div>
+  <div class="container-fluid" style="margin-top:10px" id="main">
+    <!--div class="row"> -->
+    <div class="medium-7 columns text-left">
+      <div class="row">
+        <div class="medium-5 columns  .col-md-offset-1 text-left">
+          <app-select-tipologie></app-select-tipologie>
+        </div> 
+      </div> 
+      <!--div class="medium-6 columns" *ngFor="let azienda of aziende">
+
+            <div class="blog-post-preview" (mouseover)="toggleBounce(azienda)" >
+              <figure>
+                <div class="cover-wrapper">
+                  <a href="#"><img alt="Blog Post Image" src="{{azienda.Picture}}" /></a>
+                </div>
+              </figure>
+              <div class="title-holder">
+                <div class="date">
+                  <span class="day">28</span>
+                  <span class="month">Mar</span>
+                </div>
+                <div class="title">
+                  <h6>Gazing Over Yonderway</h6>
+                  <span class="meta">Posted by Craig in <a href="#">Thoughts</a></span>
+                </div>
+                <p>
+                  Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+                </p>
+              </div>
+            </div>
+          </div-->
+
+      <div class="medium-6 columns" *ngFor="let azienda of aziende">
+        <div class="team-member"  (mouseover)="toggleBounce(azienda)">
+          <img alt="Team Member" src="{{azienda.Picture}}" />
+          <div class="member-details text-center">
+            <h6>Lee Wilson</h6>
+            <span class="title">Company Director</span>
+            <div class="horizontal-line"></div>
+            <ul class="social-profiles">
+              <li><a href="#"><i class="icon social_facebook"></i></a></li>
+              <li><a href="#"><i class="icon social_twitter"></i></a></li>
+              <li><a href="#"><i class="icon social_dribbble"></i></a></li>
+            </ul>
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+              quos dolores et quas.
+            </p>
+          </div>
+        </div>
+        <!--end of individual team member-->
+      </div>
+
+      <!-- item list -->
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Item heading</a></div>
+      </div>
+      <h4>Submitted</h4>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris
+        augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed
+        ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</p>
+
+      <hr>
+      <!-- /item list -->
+
+      <p>
+        <a href="http://www.bootply.com/render/129229">Demo</a> | <a href="http://bootply.com/129229">Source Code</a>
+      </p>
+
+      <hr>
+
+      <p>
+        <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
+      </p>
+
+      <hr>
+
+      <!--  </div> -->
+      <div class="col-xs-5">
+        <!--map-canvas will be postioned here-->
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end template -->
