@@ -1,1 +1,0 @@
-export * from './area-video-home.component';
