@@ -1,0 +1,67 @@
+<p>Procedi con la registrazione</p>
+     <hr>
+   <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate >  
+
+     
+     <input type="text" minlength="1" placeholder="Nome" required [(ngModel)]="user.nome" name="nome" value=""  #nome="ngModel">
+    <small [hidden]="nome.valid || nome.pristine"
+             class="alert alert-danger">
+          Name is required
+    </small>
+
+     
+    <input type="text"  placeholder="Cognome" required [(ngModel)]="user.cognome" #cognome="ngModel" name="cognome" value="">
+    <small [hidden]="cognome.valid || cognome.pristine"
+             class="alert alert-danger">
+          Cognome is required
+    </small>
+    
+      
+     <input type="email"  placeholder="Indirizzo email" [(ngModel)]="user.email" name="email" 
+  value="" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" >
+      <small [hidden]="email.valid || (email.pristine && !f.submitted)">
+        Email is required and format should be <i>john@doe.com</i>.
+    </small>
+
+     <input type="password"  minlength="4" maxlength="25" required [(ngModel)]="user.password" 
+     placeholder="Password" name="password" value="" #password="ngModel">
+     <small [hidden]="cognome.valid || cognome.pristine"
+             class="alert alert-danger">
+          Password is required and bigger than 4 caracter
+    </small>
+     <app-password-strength-bar [passwordToCheck]="user.password"></app-password-strength-bar>
+<hr>
+<!--  pattern="^(0|[1-9][0-9]*)$"  -->
+    <p>Seleziona la tua data di nascita</p>
+      <select class="form-control" name="giorno" required pattern="^(0|[0-9][0-9]*)$" #giorno="ngModel" [(ngModel)]="user.giorno" id="giorno" >
+        <option *ngFor="let pow of giorni"  [value]="pow">{{pow}}</option>
+      </select> 
+
+      <select class="form-control" name="mese" required #mese="ngModel" pattern="^(0|[0-9][0-9]*)$" [(ngModel)]="user.mese" id="mese" >
+        <option *ngFor="let m of mesi" [value]="m.value">{{m.display}}</option>
+      </select> 
+
+      <select class="form-control" name="anno" #anno="ngModel" pattern="^(0|[0-9][0-9][0-9][0-9]*)$" [(ngModel)]="user.anno" id="anno"required>
+        <option *ngFor="let a of anni" [value]="a">{{a}}</option>
+      </select>  
+     <small [hidden]="( giorno.valid && mese.valid && anno.valid ) || giorno.pristine">
+        Birthday day is required.
+      </small> 
+
+    <!--  <small *ngIf="giorno.value==Giorno">
+        Birthday day is required aaaarwetrgttgea.
+      </small>
+      <small *ngIf="giorno.value!=Giorno">
+        Birthday day is required diverso.
+      </small> -->
+
+     <!--  <label> <input type="checkbox" [ngModel]="user.promotionalConsens" #promotionalConsens="ngModel" id='promotionalConsens'> 
+      Vorrei ricevere coupon, promozioni, sondaggi e aggiornamenti via email su FoodZone e i suoi partner.</label>  -->
+
+     <a href="#more"  (click)="save(f.value, f.valid)" class="button button-small button-reg-email button-filled">Registrati </a>
+  </form>   
+     <p>Registrandomi, dichiaro di accettare i Termini del Servizio, 
+       le Politiche di non discriminazione, i Termini del servizio sui pagamenti, Informativa sulla Privacy, 
+       le Condizioni di Rimborso Ospiti e i Termini della Garanzia Host di Airbnb.</p>
+
+     <a class="close-reveal-modal close-reveal-modal2">&#215;</a>
